@@ -66,6 +66,7 @@ div.titlebar span.active {
 a.titlebar-link:hover {
     color: rgb(133, 0, 0);
 }
+
 /* Titlebar container */
 .titlebar {
     position: fixed;
@@ -136,8 +137,9 @@ a.titlebar-link:hover {
     }
 
     /* Show menu when checked */
-    #nav-toggle:checked ~ .nav-links {
-        max-height: 400px; /* enough to fit all links */
+    #nav-toggle:checked~.nav-links {
+        max-height: 400px;
+        /* enough to fit all links */
         padding: 10px 10px;
     }
 
@@ -198,13 +200,13 @@ a.button {
 
 a.media.button {
     height: clamp(10px, 1vw, 20px);
-    width: clamp(10px, 1vw, 20px);;
+    width: clamp(10px, 1vw, 20px);
     display: flex;
     margin: 2px;
     size: contain;
     padding: 8px;
     background-color:
-    rgb(173, 45, 45);
+        rgb(173, 45, 45);
     border-radius: 20px;
     transition: all 0.3s ease;
 }
@@ -220,7 +222,7 @@ a.media.button img {
 
 a.media.button:hover {
     background-color:
-    rgb(133, 0, 0);
+        rgb(133, 0, 0);
     padding: 10px;
     border-radius: 40px;
 }
@@ -252,7 +254,7 @@ div.card {
     transition: all 0.3s ease;
 }
 
-div.card.mega{
+div.card.mega {
     width: 90%;
     background-color: rgb(219, 209, 209);
     padding: 20px;
@@ -388,15 +390,44 @@ footer {
     color: #fff;
     font-size: clamp(12px, 1.2vw, 16px);
     text-align: center;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* ================= TEXT STYLING ================= */
-h2 { font-size: clamp(30px, 4vw, 75px); color: #fff; text-align: center; font-family: "Monaco", monospace; }
-h3 { font-size: clamp(20px, 3vw, 50px); color: rgb(141,0,0); text-align: center; font-family: "Monaco", monospace; }
-h4 { font-size: clamp(16px, 2.5vw, 30px); color: rgb(68,68,68); text-align: center; font-family: "Roboto", sans-serif; }
-h4.bullet {text-align: left;}
-p  { font-size: clamp(14px, 2vw, 20px); color: rgb(61,0,0); line-height: 1.5; text-align: center; padding: 0px 10px; padding-left: 5%; padding-right: 5%;}
+h2 {
+    font-size: clamp(30px, 4vw, 75px);
+    color: #fff;
+    text-align: center;
+    font-family: "Monaco", monospace;
+}
+
+h3 {
+    font-size: clamp(20px, 3vw, 50px);
+    color: rgb(141, 0, 0);
+    text-align: center;
+    font-family: "Monaco", monospace;
+}
+
+h4 {
+    font-size: clamp(16px, 2.5vw, 30px);
+    color: rgb(68, 68, 68);
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+}
+
+h4.bullet {
+    text-align: left;
+}
+
+p {
+    font-size: clamp(14px, 2vw, 20px);
+    color: rgb(61, 0, 0);
+    line-height: 1.5;
+    text-align: center;
+    padding: 0px 10px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
 
 /* ================= MEDIA QUERIES ================= */
 @media (max-width: 768px) {
@@ -406,7 +437,7 @@ p  { font-size: clamp(14px, 2vw, 20px); color: rgb(61,0,0); line-height: 1.5; te
     }
 
     div.robot-text {
-        align-items: center;
+        align-items: left;
         padding: 15px;
     }
 
@@ -416,36 +447,35 @@ p  { font-size: clamp(14px, 2vw, 20px); color: rgb(61,0,0); line-height: 1.5; te
     }
 
     div.card.mega img {
-    width: 80%;
-    height: auto;
-    border-radius: 12px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
+        width: 80%;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
 
-div.card.mega p {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    text-align: left;
-    line-height: 1.5;
-}
+    div.card.mega p {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        text-align: left;
+        line-height: 1.5;
+    }
 
-    h1, h2, h3, h4, p {
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
         text-align: center;
+    }
+
+    h4.bullet {
+        text-align: left;
     }
 
     div.title {
         padding: 25px 15px;
-    }
-
-    div.action {
-        padding: 20px 10px;
-    }
-
-    div.stats {
-        margin: 20px 10px;
-        gap: 15px;
     }
 }
