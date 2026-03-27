@@ -7,32 +7,7 @@
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/avif" href="logo.avif">
     </head>
-        <div class="titlebar">
-            <!-- Logo -->
-            <a class="titlebar-link" href="index.html" target="_self">
-                <img src="logo.avif" alt="Cre8 Logo">
-            </a>
-
-            <!-- Hamburger toggle -->
-            <input type="checkbox" id="nav-toggle">
-            <label for="nav-toggle" class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-
-            <!-- Navigation links -->
-            <nav class="nav-links">
-                <a class="titlebar-link" href="about.html" target="_self">About</a>
-                <a class="titlebar-link" href="robot.html" target="_self">Robot</a>
-                <a class="titlebar-link" href="impact.html" target="_self">Impact</a>
-                <a class="titlebar-link" href="portfolio.html" target="_self">Portfolio</a>
-                <a class="titlebar-link" href="highlights.html" target="_self">Highlights</a>
-                <a class="titlebar-link" href="sponsors.html" target="_self">Sponsors</a>
-                <a class="titlebar-link" href="join.html" target="_self">Join</a>
-                <a class="titlebar-link" href="updates.html" target="_self">Updates</a>
-            </nav>
-        </div>
+        <div id="header-container"></div>
         <div class="title">
             <h1>CRE<span class="highlight">8</span> ROBOTICS</h1>
             <h2>FTC Team #24438</h2>
@@ -96,11 +71,7 @@
             <a class="button" href="robot.html">View Details</a>
         </div>
         <h3>Our Sponsors</h3>
-        <div class="sponsor-logos">
-            <a href="https://www.terracon.com/" target="_blank"><img src="Terracon_Logo.jpg" alt="Terracon Logo" class="sponsor-logo"></a>
-            <a href="https://www.midamericanenergy.com/" target="_blank"><img src="midamerican-logo.png" alt="MidAmerican Logo" class="sponsor-logo"></a>
-            <a href="https://www.instagram.com/solehq_ia/" target="_blank"><img src="solehq-logo.jpg" alt="Sole HQ Logo" class="sponsor-logo"></a>
-        </div>
+        <div id="sponsors"></div>
         <p>We are grateful for the support of our sponsors, who help us achieve our goals and compete at the highest level.</p>
 
         <h3>Contact Us</h3>
@@ -110,6 +81,8 @@
             <a class="button" href="join.html">Get Involved</a>
         </div>
         <div id="footer"></div>
+        <script src="sponsors.js"></script>
+        <script src="header.js"></script>
         <script src="footer.js"></script>
     </body>
 </html>

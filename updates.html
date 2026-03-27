@@ -8,32 +8,7 @@
         <link rel="icon" type="image/avif" href="logo.avif">
     </head>
     <body>
-        <div class="titlebar">
-            <!-- Logo -->
-            <a class="titlebar-link" href="index.html" target="_self">
-                <img src="logo.avif" alt="Cre8 Logo">
-            </a>
-
-            <!-- Hamburger toggle -->
-            <input type="checkbox" id="nav-toggle">
-            <label for="nav-toggle" class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-
-            <!-- Navigation links -->
-            <nav class="nav-links">
-                <a class="titlebar-link" href="about.html" target="_self">About</a>
-                <a class="titlebar-link" href="robot.html" target="_self">Robot</a>
-                <a class="titlebar-link" href="impact.html" target="_self">Impact</a>
-                <a class="titlebar-link" href="portfolio.html" target="_self">Portfolio</a>
-                <a class="titlebar-link" href="highlights.html" target="_self">Highlights</a>
-                <a class="titlebar-link" href="sponsors.html" target="_self">Sponsors</a>
-                <a class="titlebar-link" href="join.html" target="_self">Join</a>
-                <a class="titlebar-link" href="updates.html" target="_self"><span class="active">Updates</span></a>
-            </nav>
-        </div>
+        <div id="header-container"></div>
         <div class="title">
             <h1>CRE<span class="highlight">8</span> UPDATES</h1>
         </div>
@@ -41,6 +16,7 @@
             <div id="updates"></div>
         </div>
         <div id="footer"></div>
+        <script src="header.js"></script>
         <script src="footer.js"></script>
         <script src="updates-fetcher.js"></script>
     </body>

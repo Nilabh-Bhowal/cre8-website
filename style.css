@@ -22,17 +22,16 @@ div.title {
 }
 
 h1 {
-    font-family: "Monaco", monospace;
+    font-family: 'Squartiqa 4F';
     font-size: clamp(50px, 10vw, 120px);
-    color: rgb(180, 44, 44);
-    font-weight: bolder;
+    color: #c6100f;
     margin: 0;
     padding-top: 100px;
     text-align: center;
 }
 
 div.title span.highlight {
-    color: rgb(255, 255, 255);
+    color: #fcfcfc;
 }
 
 /* ================= TITLEBAR / NAV ================= */
@@ -49,9 +48,9 @@ div.titlebar img {
 a.titlebar-link {
     display: flex;
     padding: 5px 10px;
-    font-size: clamp(15px, 1.5vw, 18px);
-    color: rgb(187, 38, 38);
-    font-family: "Roboto", sans-serif;
+    font-size: clamp(9px, 1.5vw, 12px);
+    color: #c6100f;
+    font-family: "Horizon";
     font-weight: bold;
     text-decoration: none;
     text-align: center;
@@ -59,12 +58,12 @@ a.titlebar-link {
     transition: all 0.3s ease;
 }
 
-div.titlebar span.active {
+div.titlebar a.active {
     text-decoration: underline;
 }
 
 a.titlebar-link:hover {
-    color: rgb(133, 0, 0);
+    color: #910c0c;
 }
 
 /* Titlebar container */
@@ -74,7 +73,7 @@ a.titlebar-link:hover {
     width: 100%;
     padding: 8px 8px;
     box-sizing: border-box;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(12, 8, 5, 0.75);
     backdrop-filter: blur(10px);
 
     display: flex;
@@ -128,7 +127,7 @@ a.titlebar-link:hover {
         width: 100%;
         flex-direction: column;
         align-items: center;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(12, 8, 5, 0.9);
 
         max-height: 0;
         overflow: hidden;
@@ -176,7 +175,7 @@ div.button-block {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #fff;
+    background-color: #fcfcfc;
     padding: 30px 20px;
 }
 
@@ -186,10 +185,10 @@ a.button {
     height: auto;
     margin: 15px;
     padding: 15px 15px;
-    font-size: clamp(16px, 2.5vw, 30px);
-    color: white;
-    background-color: rgb(173, 45, 45);
-    font-family: "Monaco", monospace;
+    font-size: clamp(10px, 2.5vw, 24px);
+    color: #fcfcfc;
+    background-color: #c6100f;
+    font-family: "Horizon";
     text-align: center;
     text-decoration: none;
     border-radius: 40px;
@@ -206,7 +205,7 @@ a.media.button {
     size: contain;
     padding: 8px;
     background-color:
-        rgb(173, 45, 45);
+        #c6100f;
     border-radius: 20px;
     transition: all 0.3s ease;
 }
@@ -222,13 +221,13 @@ a.media.button img {
 
 a.media.button:hover {
     background-color:
-        rgb(133, 0, 0);
+        #910c0c;
     padding: 10px;
     border-radius: 40px;
 }
 
 a.button:hover {
-    background-color: rgb(133, 0, 0);
+    background-color: #910c0c;
     padding: 18px 36px;
 }
 
@@ -243,7 +242,7 @@ div.card-block {
 
 div.card {
     width: 20%;
-    background-color: rgb(219, 209, 209);
+    background-color: #ecdbdb;
     padding: 20px;
     margin: 5px;
     border-radius: 10px;
@@ -256,7 +255,7 @@ div.card {
 
 div.card.mega {
     width: 90%;
-    background-color: rgb(219, 209, 209);
+    background-color: #ecdbdb;
     padding: 20px;
     margin: 5px;
     border-radius: 10px;
@@ -362,7 +361,7 @@ div.robot-text {
 
 /* ================= SPONSORS ================= */
 
-div.sponsor-logos {
+#sponsors {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -370,10 +369,11 @@ div.sponsor-logos {
     gap: 30px;
 }
 
-img.sponsor-logo {
-    max-height: 100%;
-    width: auto;
-    max-width: 80%;
+#sponsors img {
+    object-fit: contain;      /* keeps the logo fully visible */
+    width: auto;             /* reasonable default size */
+    height: 6vw;             /* preserves aspect ratio */
+    margin: 10px;
     transition: transform 0.3s ease;
 }
 
@@ -387,19 +387,40 @@ div.footer {
     bottom: 0;
     width: 100%;
     padding: 5px;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(12, 8, 5, 0.75);
     backdrop-filter: blur(5px);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0px
+    margin: 0px;
 }
 
 footer {
-    color: #fff;
+    color: #fcfcfc;
     font-size: clamp(12px, 1.2vw, 16px);
     text-align: center;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 2px rgba(12, 8, 5, 0.5);
+    font-family: "Cinzel Decorative", serif;
+}
+
+@font-face {
+    font-family: 'Squartiqa 4F';
+    src: local('Squartiqa 4F Regular'), local('Squartiqa-4F-Regular'),
+        url('Squartiqa4F.woff2') format('woff2'),
+        url('Squartiqa4F.woff') format('woff'),
+        url('Squartiqa4F.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+@font-face {
+    font-family: 'Horizon';
+    src: local('Horizon'),
+        url("horizon.woff2") format("woff2"),
+        url("horizon.otf") format("otf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* ================= TEXT STYLING ================= */
@@ -407,21 +428,22 @@ h2 {
     font-size: clamp(30px, 4vw, 75px);
     color: #fff;
     text-align: center;
-    font-family: "Monaco", monospace;
+    font-family: 'Horizon';
 }
 
 h3 {
     font-size: clamp(20px, 3vw, 50px);
-    color: rgb(141, 0, 0);
+    color: #910c0c;
     text-align: center;
-    font-family: "Monaco", monospace;
+    font-family: "Horizon";
 }
 
 h4 {
-    font-size: clamp(16px, 2.5vw, 30px);
-    color: rgb(68, 68, 68);
+    font-size: clamp(20px, 2.5vw, 34px);
+    color: rgb(70, 36, 36);
     text-align: center;
-    font-family: "Roboto", sans-serif;
+    font-family: "Cinzel Decorative", serif;
+    font-weight: bolder;
 }
 
 h4.bullet {
@@ -430,12 +452,13 @@ h4.bullet {
 
 p {
     font-size: clamp(14px, 2vw, 20px);
-    color: rgb(61, 0, 0);
+    color: #440606;
     line-height: 1.5;
     text-align: center;
     padding: 0px 10px;
     padding-left: 5%;
     padding-right: 5%;
+    font-family: "Roboto", sans-serif;
 }
 
 /* ================= MEDIA QUERIES ================= */
