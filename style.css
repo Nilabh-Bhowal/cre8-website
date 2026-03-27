@@ -417,7 +417,7 @@ footer {
     font-family: 'Horizon';
     src: local('Horizon'),
         url("Horizon.woff2") format("woff2"),
-        url("Horizon.otf") format("otf");
+        url("Horizon.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -476,6 +476,10 @@ p {
     div.card {
         flex: 1 1 100%;
         max-width: 90%;
+    }
+
+    #sponsors img {
+        height: 13vw;
     }
 
     div.card.mega img {
