@@ -416,8 +416,8 @@ footer {
 @font-face {
     font-family: 'Horizon';
     src: local('Horizon'),
-        url("horizon.woff2") format("woff2"),
-        url("horizon.otf") format("otf");
+        url("Horizon.woff2") format("woff2"),
+        url("Horizon.otf") format("otf");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
