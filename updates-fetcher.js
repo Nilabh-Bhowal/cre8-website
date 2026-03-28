@@ -11,7 +11,18 @@ fetch(url)
 
         rows.reverse().forEach(row => {
             if (row.c[0]?.v === "Date") return;
-            const date = new Date(row.c[0]?.v || "").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+            const timestampRaw = row.c[0]?.v; // raw Google date
+            let timestamp = "";
+            if (timestampRaw) {
+                const date = parseGoogleDate(timestampRaw);
+                if (date) {
+                    timestamp = date.toLocaleString("en-US", {
+                        month: "long",
+                        day: "numeric",
+                        year: "numeric"
+                    });
+                }
+            }
             const title = row.c[1]?.v || "";
             const content = row.c[2]?.v || "";
             const image = row.c[3]?.v || "";  // new image column
@@ -21,7 +32,7 @@ fetch(url)
 
             card.innerHTML = `
         <h3>${title}</h3>
-        <h4>${date}</h4>
+        <h4>${timestamp}</h4>
         <p>${content.replace(/\n/g, "<br>")}</p>
         ${image ? `<img src="${image}" alt="${title}" class="update-img">` : ""}
       `;
@@ -29,3 +40,11 @@ fetch(url)
             container.appendChild(card);
         });
     });
+function parseGoogleDate(dateStr) {
+    // Example input: "Date(2026,2,27,18,42,41)"
+    const match = dateStr.match(/Date\((\d+),(\d+),(\d+),(\d+),(\d+),(\d+)\)/);
+    if (!match) return null;
+
+    const [_, year, month, day, hour, minute, second] = match.map(Number);
+    return new Date(year, month, day, hour, minute, second);
+}
