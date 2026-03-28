@@ -1,17 +1,17 @@
 /* ================= BODY & GLOBAL ================= */
 body {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     font-family: "Roboto", sans-serif;
-    background-color: #ffffff;
+    background-color: #fcfcfc;
     color: #000000;
 }
 
 /* ================= HERO / TITLE ================= */
 div.title {
     background-image: url("banner.jpg");
-    background-blend-mode: multiply;
-    background-attachment: fixed;
+    background-blend-mode: color-burn;
+    background-attachment:fixed;
     padding: 100px 20px;
     background-color: rgba(0, 0, 0, 0.75);
     background-size: cover;
@@ -191,7 +191,7 @@ a.button {
     font-family: "Horizon";
     text-align: center;
     text-decoration: none;
-    border-radius: 40px;
+    border-radius: clamp(20px, 5vw, 48px);
     transition: all 0.3s ease;
     justify-content: center;
     align-items: center;
@@ -222,13 +222,12 @@ a.media.button img {
 a.media.button:hover {
     background-color:
         #910c0c;
-    padding: 10px;
-    border-radius: 40px;
+    scale: 1.05;
 }
 
 a.button:hover {
     background-color: #910c0c;
-    padding: 18px 36px;
+    scale: 1.15;
 }
 
 /* ================= STATS / CARDS ================= */
@@ -318,8 +317,8 @@ div.card.mega p {
 }
 
 div.card:hover {
-    padding: 40px;
-    border-radius: 15px;
+    /* padding: 40px; */
+    scale: 1.05;
 }
 
 /* ================= ROBOT SECTION ================= */
@@ -475,15 +474,25 @@ p {
 
     div.card {
         flex: 1 1 100%;
-        max-width: 90%;
+        max-width: 100%;
+    }
+    div.card.mega {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin: 0px;
+    }
+
+    div.card:hover {
+        padding: 30px;
     }
 
     #sponsors img {
         height: 13vw;
+        border-radius: 2px;
     }
 
     div.card.mega img {
-        width: 80%;
+        width: 100%;
         height: auto;
         border-radius: 12px;
         object-fit: cover;
@@ -491,7 +500,7 @@ p {
     }
 
     div.card.mega p {
-        width: 90%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         gap: 16px;
