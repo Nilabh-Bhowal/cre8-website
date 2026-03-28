@@ -228,6 +228,11 @@ a.media.button:hover {
     background-color:
         #910c0c;
     scale: 1.05;
+    cursor: pointer;
+}
+
+a.media.button img:hover {
+     cursor: pointer;
 }
 
 a.button:hover {
