@@ -87,6 +87,11 @@ a.titlebar-link:hover {
     height: 30px;
 }
 
+.titlebar-link img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
 /* Hide checkbox */
 #nav-toggle {
     display: none;
@@ -348,6 +353,7 @@ img {
 
 img:hover {
     transform: scale(1.05);
+    cursor:default;
 }
 
 div.robot-text {
@@ -374,6 +380,7 @@ div.robot-text {
     height: 6vw;             /* preserves aspect ratio */
     margin: 10px;
     transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 div.bottom {
@@ -400,6 +407,7 @@ footer {
     text-align: center;
     text-shadow: 1px 1px 2px rgba(12, 8, 5, 0.5);
     font-family: "Cinzel Decorative", serif;
+    padding-right: 2vw;
 }
 
 @font-face {
@@ -438,10 +446,10 @@ h3 {
 }
 
 h4 {
-    font-size: clamp(20px, 2.5vw, 34px);
+    font-size: clamp(18px, 2.5vw, 30px);
     color: rgb(70, 36, 36);
     text-align: center;
-    font-family: "Cinzel Decorative", serif;
+    font-family: "Cinzel Decorative";
     font-weight: bolder;
 }
 
