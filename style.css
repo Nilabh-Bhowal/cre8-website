@@ -426,7 +426,7 @@ details[open] summary::before {
     transform: rotate(90deg);
 }
 
-details.details_content {
+details.details-content {
     display: flex;
     justify-content: center;
     align-items: center;
