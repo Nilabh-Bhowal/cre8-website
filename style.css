@@ -426,6 +426,12 @@ details[open] summary::before {
     transform: rotate(90deg);
 }
 
+details.details_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 div.card.match {
     border-color: #440606;
     border-style:solid;
