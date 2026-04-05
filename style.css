@@ -426,45 +426,6 @@ details[open] summary::before {
     transform: rotate(90deg);
 }
 
-details::details-content {
-  transition: height 0.5s ease-in-out, content-visibility 0.5s ease-in-out allow-discrete;
-  height: 0;
-  overflow: clip;
-}
-
-/* Browser supports interpolate-size */
-  :root {
-    interpolate-size: allow-keywords;
-  }
-
-  details[open]::details-content {
-    height: auto;
-    overflow: visible;
-  }
-
-@supports selector(::details-content) {
-  .notice {
-    display: none;
-  }
-}
-
-@layer base {
-
-  body {
-    font-family: system-ui;
-    overflow-x: hidden;
-  }
-
-  .notice {
-    background: wheat;
-    color: saddlebrown;
-    margin-block-end: 1rem;
-    padding: 1rem;
-    text-align: center;
-    text-shadow: 0 1px 1px hsl(0 0 100%);
-}
-}
-
 div.card.match {
     border-color: #440606;
     border-style:solid;
