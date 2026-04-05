@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cre8 Highlights</title>
+        <title>Cre8 Results</title>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/avif" href="logo.avif">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700&display=swap">
@@ -11,9 +11,9 @@
     <body>
         <div id="header-container"></div>
         <div class="title">
-            <h1>HIGHLIGHTS</h1>
+            <h1>RESULTS</h1>
         </div>
-        <div class="card-block bottom">
+        <div class="card-block">
             <div class="card">
                 <h4>2026 Iowa State Division Finalist</h4>
             </div>
@@ -27,8 +27,12 @@
                 <h4>2026 Acropolis League Design Award</h4>
             </div>
         </div>
+        <div id="loading-indicator" class="spinner"></div>
+        <div id="events-container" class="bottom"></div>
         <div id="footer"></div>
         <script src="header.js"></script>
         <script src="footer.js"></script>
+        <script src="event-fetch.js"></script>
+        <script src="details-transition.js"></script>
     </body>
 </html>
