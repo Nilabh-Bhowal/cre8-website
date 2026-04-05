@@ -433,7 +433,6 @@ details::details-content {
 }
 
 /* Browser supports interpolate-size */
-@supports (interpolate-size: allow-keywords) {
   :root {
     interpolate-size: allow-keywords;
   }
@@ -442,7 +441,6 @@ details::details-content {
     height: auto;
     overflow: visible;
   }
-}
 
 @supports selector(::details-content) {
   .notice {
