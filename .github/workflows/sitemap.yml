@@ -20,7 +20,7 @@ jobs:
       uses: cicirello/generate-sitemap@v1
       with:
         base-url-path: https://cre8thefuture.us/ # <-- Put your domain here
-        ignore-files: 'header.html, footer.html'
+        ignore-files: 'header.html, footer.html, portfolio.pdf'
 
     - name: Commit and push the sitemap
       run: |
