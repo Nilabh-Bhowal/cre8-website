@@ -1,0 +1,19 @@
+<div class="chatbot">
+    <button id="chat-widget-button" onclick="toggleChatWindow()">🐼</button>
+
+    <div id="chat-widget-box">
+        <div class="chat-header">
+            <span>🐼Po Ping</span>
+            <div class="close-btn" onclick="toggleChatWindow()">&times;</div>
+        </div>
+
+        <div class="chat-messages" id="chat-messages-log">
+            <div class="message bot">Hey there! I'm Po, Cre8's mascot! Ask me anything about Cre8 Robotics—our roster, engineering specs, or results</div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="user-chat-input" placeholder="Type your telemetry inquiry..." onkeypress="handleKeyPress(event)">
+            <button id="chat-send-btn" onclick="sendChatMessage()">Send</button>
+        </div>
+    </div>
+</div>

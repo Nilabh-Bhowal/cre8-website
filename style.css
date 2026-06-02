@@ -1,3 +1,11 @@
+/* ==========================================================
+   CRE8 ROBOTICS MASTER STYLE MATRIX
+   ========================================================== */
+
+html {
+    scroll-behavior: smooth; /* Fluid luxury scroll transitions */
+}
+
 /* ================= BODY & GLOBAL ================= */
 body {
     margin: 0px;
@@ -11,7 +19,7 @@ body {
 div.title {
     background-image: url("banner.jpg");
     background-blend-mode: color-burn;
-    background-attachment:fixed;
+    background-attachment: fixed;
     padding: 100px 20px;
     background-color: rgba(0, 0, 0, 0.75);
     background-size: cover;
@@ -35,6 +43,19 @@ div.title span.highlight {
 }
 
 /* ================= TITLEBAR / NAV ================= */
+.titlebar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 8px 8px;
+    box-sizing: border-box;
+    background-color: rgba(12, 8, 5, 0.75);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
 
 div.titlebar img {
     height: 35px;
@@ -42,7 +63,7 @@ div.titlebar img {
     margin: 0px;
     padding: 0px;
     border-radius: 0px;
-    size: contain;
+    object-fit: contain; /* FIXED: Corrected invalid 'size: contain' */
 }
 
 a.titlebar-link {
@@ -55,7 +76,7 @@ a.titlebar-link {
     text-decoration: none;
     text-align: center;
     margin: 5px;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease; /* OPTIMIZED: Avoided global 'all' conflict */
 }
 
 div.titlebar a.active {
@@ -63,32 +84,17 @@ div.titlebar a.active {
 }
 
 a.titlebar-link:hover {
-    color: #910c0c;
+    color: #fcfcfc;
 }
 
-/* Titlebar container */
-.titlebar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 8px 8px;
-    box-sizing: border-box;
-    background-color: rgba(12, 8, 5, 0.75);
-    backdrop-filter: blur(10px);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-}
-
-/* Logo */
+/* Logo Interactions */
 .titlebar-link img {
     height: 30px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .titlebar-link img:hover {
-    transform: scale(1.1);
+    transform: scale(1.15) rotate(-3deg); /* UPGRADED: Dynamic mechanical snap twist */
     cursor: pointer;
 }
 
@@ -100,7 +106,6 @@ a.titlebar-link:hover {
 /* Desktop nav links */
 .nav-links {
     display: flex;
-    /* gap: 10px; */
 }
 
 /* Hamburger icon (hidden on desktop) */
@@ -119,7 +124,7 @@ a.titlebar-link:hover {
     border-radius: 2px;
 }
 
-/* ---------- MOBILE ---------- */
+/* ---------- MOBILE NAVIGATION ---------- */
 @media (max-width: 900px) {
     .hamburger {
         display: flex;
@@ -133,17 +138,15 @@ a.titlebar-link:hover {
         flex-direction: column;
         align-items: center;
         background-color: rgba(12, 8, 5, 0.9);
-
         max-height: 0;
         overflow: hidden;
-        transition: all 0.3s ease;
+        transition: max-height 0.3s ease, padding 0.3s ease;
         padding: 0;
     }
 
     /* Show menu when checked */
-    #nav-toggle:checked~.nav-links {
+    #nav-toggle:checked ~ .nav-links {
         max-height: 400px;
-        /* enough to fit all links */
         padding: 10px 10px;
     }
 
@@ -170,7 +173,6 @@ div.img-block img {
     border-radius: 12px;
     object-fit: cover;
     margin: 0 auto;
-    transition: transform 0.3s ease;
     display: block;
 }
 
@@ -189,7 +191,7 @@ a.button {
     width: auto;
     height: auto;
     margin: 15px;
-    padding: 15px 15px;
+    padding: 15px 28px;
     font-size: clamp(10px, 2.5vw, 24px);
     color: #fcfcfc;
     background-color: #c6100f;
@@ -197,9 +199,18 @@ a.button {
     text-align: center;
     text-decoration: none;
     border-radius: clamp(20px, 5vw, 48px);
-    transition: all 0.3s ease;
-    justify-content: center;
+    box-shadow: 0 4px 12px rgba(198, 16, 15, 0.2);
     align-items: center;
+    justify-content: center;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                background-color 0.3s ease,
+                box-shadow 0.4s ease;
+}
+
+a.button:hover {
+    background-color: #910c0c;
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 22px rgba(145, 12, 12, 0.4);
 }
 
 a.media.button {
@@ -207,12 +218,10 @@ a.media.button {
     width: clamp(10px, 1vw, 20px);
     display: flex;
     margin: 2px;
-    size: contain;
     padding: 8px;
-    background-color:
-        #c6100f;
+    background-color: #c6100f;
     border-radius: 20px;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 a.media.button img {
@@ -224,20 +233,15 @@ a.media.button img {
     border-radius: 12px;
 }
 
-a.media.button:hover {
-    background-color:
-        #910c0c;
-    scale: 1.05;
+a.media.button img:hover {
+    filter: brightness(1.2);
     cursor: pointer;
 }
 
-a.media.button img:hover {
-     cursor: pointer;
-}
-
-a.button:hover {
+a.media.button:hover {
     background-color: #910c0c;
-    scale: 1.15;
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 /* ================= STATS / CARDS ================= */
@@ -246,7 +250,7 @@ div.card-block {
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    margin: 30px 20px;
+    margin: 30px clamp(10px, 3vw, 40px);;
 }
 
 div.card {
@@ -254,35 +258,60 @@ div.card {
     background-color: #ecdbdb;
     padding: 20px;
     margin: 5px;
-    border-radius: 10px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    transition: all 0.3s ease;
+
+    /* NO BORDER ARCHITECTURE */
+    border: none;
+    box-shadow: 0 4px 12px rgba(12, 8, 5, 0.04);
+    will-change: transform, box-shadow;
+
+    /* Smoothly animates the face color and shadow depth simultaneously */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                background-color 0.3s ease;
+}
+
+div.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    background-color: #f3e6e6; /* Fluid shifts to a cleaner, brighter face */
+
+    /* PREMIUM DEPTH BLEND: A soft ambient shadow drop mixed with a warm brand undertone */
+    box-shadow: 0 16px 32px rgba(12, 8, 5, 0.12),
+                0 4px 14px rgba(198, 16, 15, 0.05);
 }
 
 div.card.mega {
     width: 90%;
     background-color: #ecdbdb;
-    padding: 20px;
-    margin: 5px;
-    border-radius: 10px;
-    justify-content: center;
-    transition: all 0.3s ease;
+    padding: 25px;
+    margin: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: top;
-    margin: 30px 20px;
+    justify-content: center;
     gap: 20px;
+}
+
+div.card.mega:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 14px 35px rgba(12, 8, 5, 0.12);
+    background-color: #f1e0e0;
 }
 
 #updates {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* center horizontally */
-    align-items: flex-start; /* align cards at the top */
+    justify-content: center;
+    align-items: flex-start;
     gap: 20px;
     margin: 30px 20px;
 }
@@ -294,30 +323,18 @@ div.card img {
     object-fit: cover;
     margin-bottom: 12px;
     flex-shrink: 0;
-    transition: transform 0.3s ease;
 }
 
-div.card p {
-    margin: 5px;
-}
+div.card p { margin: 5px; }
 
 div.card.mega img {
     width: 25%;
     height: auto;
     border-radius: 12px;
     object-fit: cover;
-    transition: transform 0.3s ease;
 }
 
-div.card.mega h4 {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    text-align: center;
-}
-
-div.card.mega h3 {
+div.card.mega h4, div.card.mega h3 {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -326,17 +343,13 @@ div.card.mega h3 {
 }
 
 div.card.mega p {
-    width: 35%;
+    flex: 1;
+    min-width: 250px;
     display: flex;
     flex-direction: column;
     gap: 16px;
     text-align: left;
     line-height: 1.5;
-}
-
-div.card:hover {
-    /* padding: 40px; */
-    scale: 1.05;
 }
 
 /* ================= ROBOT SECTION ================= */
@@ -355,18 +368,19 @@ div.robot {
     height: auto;
     border-radius: 12px;
     object-fit: cover;
-    transition: transform 0.3s ease;
 }
 
 img {
     border-radius: 12px;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    will-change: transform;
+    transition: transform 0.5s cubic-bezier(0.15, 0.85, 0.45, 1), filter 0.3s ease;
 }
 
 img:hover {
-    transform: scale(1.05);
-    cursor:default;
+    transform: scale(1.03);
+    filter: brightness(1.03);
+    cursor: default;
 }
 
 div.robot-text {
@@ -377,16 +391,24 @@ div.robot-text {
     padding: 20px;
 }
 
+/* ================= LOADING SPINNER & ACCORDIONS ================= */
 .spinner {
-  margin: 20px auto;
-  width: 40px;
-  height: 40px;
-  border: 5px solid #ecdbdb;
-  border-top-color: #910c0c;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+    margin: 20px auto;
+    width: 40px;
+    height: 40px;
+    border: 5px solid #ecdbdb;
+    border-top-color: #910c0c;
+    border-radius: 50%;
+
+    /* THE FIX: Smooth hardware rendering hint */
+    will-change: transform;
+    animation: spin 0.8s linear infinite; /* Slightly faster snap rotation */
 }
-@keyframes spin { 100% { transform: rotate(360deg); } }
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 details {
     width: 100%;
@@ -396,7 +418,6 @@ details {
     font-family: "Roboto", sans-serif;
 }
 
-/* Make summary clickable and not ugly */
 details summary {
     cursor: pointer;
     user-select: none;
@@ -404,16 +425,9 @@ details summary {
     padding: 6px 0;
 }
 
-details > summary {
-    list-style: none;          /* Firefox */
-    cursor: pointer;
-}
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
 
-details > summary::-webkit-details-marker {
-    display: none;             /* Chrome / Safari */
-}
-
-/* Simple arrow indicator */
 details summary::before {
     content: "▶";
     display: inline-block;
@@ -421,7 +435,6 @@ details summary::before {
     transition: transform 0.3s ease;
 }
 
-/* Rotate arrow when open */
 details[open] summary::before {
     transform: rotate(90deg);
 }
@@ -432,13 +445,14 @@ details.details-content {
     align-items: center;
 }
 
+/* ================= MATCH LOG BOARDS ================= */
 div.card.match {
     border-color: #440606;
-    border-style:solid;
+    border-style: solid;
     width: 80%;
     border-width: 6px;
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
     justify-self: center;
@@ -451,15 +465,14 @@ div.card.match {
 }
 
 span.win {
-
-    text-decoration:underline #440606 6px;
+    background: linear-gradient(120deg, rgba(198, 16, 15, 0.15) 0%, rgba(198, 16, 15, 0.05) 100%);
+    padding: 2px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    border-bottom: 2px solid #c6100f; /* Sleek structural underline badge replacement */
 }
 
-div.card.mega:hover {
-    /* padding: 40px; */
-    scale: 1.05 1.0;
-}
-
+/* ================= ACCOLADE TEXT BADGES ================= */
 div.badges {
     display: flex;
     flex-wrap: wrap;
@@ -478,18 +491,23 @@ badge {
     font-size: clamp(20px, 3vw, 28px);
     font-weight: bold;
     text-align: center;
-    padding: 15px 15px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
+    padding: 15px 25px; /* OPTIMIZED: Unified balanced block metrics */
+    border-radius: 14px;
+    border: 1px solid rgba(252, 252, 252, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
 badge:hover {
-    transform: scale(1.05);
-    cursor:default;
+    transform: scale(1.06) translateY(-2px);
+    background-color: #440606;
+    box-shadow: 0 8px 20px rgba(12, 8, 5, 0.3);
+    cursor: default;
 }
 
-/* ================= SPONSORS ================= */
-
+/* ================= CORPORATE SPONSORS ================= */
 #sponsors {
     display: flex;
     flex-wrap: wrap;
@@ -499,19 +517,25 @@ badge:hover {
 }
 
 #sponsors img {
-    object-fit: contain;      /* keeps the logo fully visible */
-    width: auto;             /* reasonable default size */
-    height: 6vw;             /* preserves aspect ratio */
+    object-fit: contain;
+    width: auto;
+    height: 6vw;
     margin: 10px;
-    transition: transform 0.3s ease;
+    transition: transform filter 0.3s ease;
     cursor: pointer;
+    filter: grayscale(20%) opacity(0.7);
+}
+
+#sponsors img:hover {
+    transform: scale(1.08);
+    filter: grayscale(0%) opacity(1); /* Pops back into full color on hover */
 }
 
 div.bottom {
     margin-bottom: 100px;
 }
 
-/* ================= FOOTER ================= */
+/* ================= SYSTEM FOOTER ================= */
 div.footer {
     position: fixed;
     bottom: 0;
@@ -534,27 +558,29 @@ footer {
     padding-right: 2vw;
 }
 
+/* ================= LOCAL FONTS CORE ================= */
 @font-face {
+    font-display: swap;
     font-family: 'Squartiqa 4F';
     src: local('Squartiqa 4F Regular'), local('Squartiqa-4F-Regular'),
-        url('Squartiqa4F.woff2') format('woff2'),
-        url('Squartiqa4F.woff') format('woff'),
-        url('Squartiqa4F.ttf') format('truetype');
+         url('Squartiqa4F.woff2') format('woff2'),
+         url('Squartiqa4F.woff') format('woff'),
+         url('Squartiqa4F.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
-  }
+}
 
 @font-face {
     font-family: 'Horizon';
     src: local('Horizon'),
-        url("Horizon.woff2") format("woff2"),
-        url("Horizon.otf") format("opentype");
+         url("Horizon.woff2") format("woff2"),
+         url("Horizon.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
-/* ================= TEXT STYLING ================= */
+/* ================= TYPOGRAPHY MATRIX ================= */
 h2 {
     font-size: clamp(30px, 4vw, 75px);
     color: #fff;
@@ -592,67 +618,281 @@ p {
     font-family: "Roboto", sans-serif;
 }
 
-/* ================= MEDIA QUERIES ================= */
+/* ================= RESPONSIVE VIEWPORT BREAKPOINTS ================= */
 @media (max-width: 768px) {
-    div.robot {
-        flex-direction: column;
-        text-align: center;
+    div.robot { flex-direction: column; text-align: center; }
+    div.robot-text { align-items: left; padding: 15px; }
+    div.card { flex: 1 1 100%; max-width: 100%; }
+    div.card.mega { flex: 1 1 100%; max-width: 100%; margin: 0px; }
+    div.card:hover { padding: 30px; }
+    #sponsors img { height: 13vw; border-radius: 2px; }
+    div.card.mega img { width: 100%; height: auto; }
+    div.card.mega p { width: 100%; text-align: left; }
+    h1, h2, h3, h4, p { text-align: center; }
+    h4.bullet { text-align: left; }
+    div.title { padding: 25px 15px; }
+}
+
+/* ==========================================================
+   PO THE MASCOT'S BRAND-MATCHED CHAT WIDGET STYLES
+   ========================================================== */
+
+/* --- FLOATING LAUNCH BUTTON --- */
+#chat-widget-button {
+    position: fixed;
+    bottom: 64px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(12, 8, 5, 0.85);
+    color: #ffffff;
+    border: 3px solid #c6100f;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(198, 16, 15, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    will-change: transform, box-shadow;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                background-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+#chat-widget-button:hover {
+    transform: scale(1.1) rotate(15deg);
+    background-color: #c6100f;
+    box-shadow: 0 6px 20px rgba(198, 16, 15, 0.6);
+}
+
+/* --- THE MAIN DIALOG PANEL --- */
+#chat-widget-box {
+    position: fixed;
+    bottom: 136px;
+    right: 24px;
+    width: 365px;
+    height: 520px;
+    z-index: 9999;
+    display: none; /* Controlled by your JS toggle toggleState */
+    flex-direction: column;
+    overflow: hidden;
+
+    /* PREMIUM GLASSMORPHISM REFACTOR */
+    background-color: rgba(252, 252, 252, 0.75);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(12, 8, 5, 0.18);
+
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#chat-widget-box.active {
+    display: flex !important;
+}
+
+/* --- INTERFACE HEADER --- */
+.chat-header {
+    background-color: #0c0805;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #c6100f; /* Razor-thin signature element divider */
+}
+
+.chat-header span {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Horizon", sans-serif;
+    font-size: 13px;
+    color: #fcfcfc;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 20px;
+    color: #c6100f;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #fcfcfc; /* Flashes crisp white to stand out sharply against the dark bar */
+    transform: scale(1.15);
+}
+
+/* --- CONVERSATION VIEWPORT --- */
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: transparent; /* Allows glass backdrop filters to show through beautifully */
+}
+
+/* --- MESSAGING SPEECH BUBBLES --- */
+.message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.45;
+    word-wrap: break-word;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+.message.user {
+    background-color: #c6100f;
+    color: #fcfcfc;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px; /* Distinct conversational alignment snap */
+    box-shadow: 0 4px 12px rgba(198, 16, 15, 0.15);
+}
+
+.message.bot {
+    background-color: rgba(236, 219, 219, 0.65); /* Soft, brand-tinted translucent plate */
+    color: #0c0805;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    border: 1px solid rgba(198, 16, 15, 0.1);
+}
+
+/* --- SUBMISSION SYSTEM FIELD BAR --- */
+.chat-input-area {
+    display: flex;
+    padding: 14px 16px;
+    background-color: #0c0805;
+    border-top: 1px solid rgba(198, 16, 15, 0.25);
+    gap: 10px;
+    align-items: center;
+}
+
+.chat-input-area input {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #ffffff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    font-family: "Roboto", sans-serif;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Technical neon bloom when user is engaged */
+.chat-input-area input:focus {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-color: #c6100f;
+    box-shadow: 0 0 12px rgba(198, 16, 15, 0.35);
+}
+
+.chat-input-area button {
+    background-color: #c6100f;
+    color: #fcfcfc;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: "Horizon", sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.chat-input-area button:hover {
+    background-color: #910c0c;
+    transform: scale(1.03);
+}
+
+/* --- TELEMETRY THREAD PROTECTION LOCKS --- */
+.chat-input-area input:disabled,
+.chat-input-area button:disabled {
+    background-color: rgba(236, 219, 219, 0.2) !important;
+    color: rgba(252, 252, 252, 0.4) !important;
+    border-color: transparent !important;
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* ==========================================================
+   MOBILE RESPONSIVE OVERRIDES (TABLETS & PHONES)
+   ========================================================== */
+@media screen and (max-width: 500px) {
+    /* 1. Adjust the floating launch button so it doesn't crowd the corner */
+    #chat-widget-button {
+        bottom: 56px;
+        right: 16px;
+        width: 54px;
+        height: 54px;
+        font-size: 24px;
     }
 
-    div.robot-text {
-        align-items: left;
-        padding: 15px;
-    }
-
-    div.card {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-    div.card.mega {
-        flex: 1 1 100%;
-        max-width: 100%;
-        margin: 0px;
-    }
-
-    div.card:hover {
-        padding: 30px;
-    }
-
-    #sponsors img {
-        height: 13vw;
-        border-radius: 2px;
-    }
-
-    div.card.mega img {
+    /* 2. Transform the chat panel into a sleek bottom-sheet layout */
+    #chat-widget-box {
+        bottom: 0;
+        right: 0;
         width: 100%;
-        height: auto;
-        border-radius: 12px;
-        object-fit: cover;
-        transition: transform 0.3s ease;
+        /* Subtracting 16px leaves room to see the host site header if needed,
+           or change to 100% for an absolute full-screen takeover */
+        height: 85vh;
+        border-radius: 20px 20px 0 0; /* Smooth rounded top corners only */
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        box-shadow: 0 -8px 32px rgba(12, 8, 5, 0.25);
     }
 
-    div.card.mega p {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        text-align: left;
-        line-height: 1.5;
+    /* 3. Increase padding inside the viewport for easy tapping */
+    .chat-header {
+        padding: 18px 16px;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    p {
-        text-align: center;
+    .close-btn {
+        padding: 8px; /* Greatly increases the actionable touch target area */
+        font-size: 26px;
     }
 
-    h4.bullet {
-        text-align: left;
+    .chat-messages {
+        padding: 16px;
+        gap: 10px;
     }
 
-    div.title {
-        padding: 25px 15px;
+    .message {
+        max-width: 85%; /* Give message text a wider tracking row on small screens */
+        padding: 12px 14px;
+        font-size: 15px; /* Slightly larger text to completely bypass iOS auto-zoom */
+    }
+
+    /* 4. Optimize input field so mobile keyboards don't distort layout */
+    .chat-input-area {
+        padding: 12px 12px calc(12px + env(safe-area-inset-bottom)); /* Protects iOS home bar */
+        gap: 8px;
+    }
+
+    .chat-input-area input {
+        padding: 12px;
+        font-size: 16px; /* CRITICAL: Must be at least 16px to prevent iOS Safari from forces zooming input fields */
+    }
+
+    .chat-input-area button {
+        padding: 12px 14px;
+        font-size: 12px;
     }
 }
