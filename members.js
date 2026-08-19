@@ -30,6 +30,20 @@ fetch(url)
       const card = document.createElement("div");
       card.className = "card";
 
+      if (image == "") {
+        card.innerHTML = `
+          <h4>${name}</h4>
+          ${grade ? `<p>${grade}th Grade</p>` : ""}
+          ${roles? `<p>${roles}</p>` : ""}
+        `;
+      } else {
+        card.innerHTML = `
+          <img src="${image}" class="card-image" alt="${name}">
+          <h4>${name}</h4>
+          ${grade ? `<p>${grade}th Grade</p>` : ""}
+          ${roles? `<p>${roles}</p>` : ""}
+        `;
+      }
       card.innerHTML = `
         <img src="${image}" class="card-image" alt="${name}">
         <h4>${name}</h4>
