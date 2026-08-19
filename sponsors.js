@@ -4,7 +4,6 @@ const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:j
 fetch(url)
     .then(res => res.text())
     .then(text => {
-        console.log(text);
         const json = JSON.parse(text.substr(47).slice(0, -2));
         const { rows } = json.table;
         const container = document.getElementById("sponsors");

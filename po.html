@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Po Ping</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/avif" href="logo.avif">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700&display=swap">
+    </head>
+    <body>
+        <div class="chatbot">
+
+            <div id="chat-widget-box" class="fullscreen">
+                <div class="chat-header">
+                    <span>🐼Po Ping</span>
+                </div>
+
+                <div class="chat-messages" id="chat-messages-log">
+                    <div class="message bot">Hey there! I'm Po, Cre8's team support! Ask me anything about all FTC related questions and issues!</div>
+                </div>
+
+                <div class="chat-input-area">
+                    <input type="text" id="user-chat-input" placeholder="Type your request..." onkeypress="handleKeyPress(event)">
+                    <button id="chat-send-btn" onclick="sendChatMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="po.js"></script>
+    </body>
+</html>
